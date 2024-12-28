@@ -6,6 +6,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // import 'swiper/css';
 // import 'swiper/css/pagination';
 
+import "../../../node_modules/swiper/swiper-bundle.min.css";
+import "../../../node_modules/swiper/modules/pagination-element.min.css";
+
 import './Reviews.css';
 
 // import required modules
