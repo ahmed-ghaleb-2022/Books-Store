@@ -1,8 +1,8 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-import booksRoute from "./routes/booksRoute.js";
 import env from "dotenv"; 
+import { Book } from "./models/bookmodel.js";
 
 env.config();
 
@@ -18,7 +18,118 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.use('/books', booksRoute)
+
+//Route for save a new Book
+app.post("/books", async (request, response) => {
+  try {
+    if (
+      !request.body.bookTitle ||
+      !request.body.authorName ||
+      !request.body.bookDescription||
+      !request.body.imageURL||
+      !request.body.category||
+      !request.body.bookPDFURL||
+      !request.body.price
+    ) {
+      return response.status(400).send({
+        message: "Send All required fields ",
+      });
+    }
+    const newBook = {
+      bookTitle: request.body.bookTitle,
+      authorName: request.body.authorName,
+      bookDescription: request.body.bookDescription,
+      imageURL: request.body.imageURL,
+      category: request.body.category,
+      bookPDFURL: request.body.bookPDFURL,
+      price: request.body.price
+    };
+
+    const book = await Book.create(newBook);
+
+    return response.status(201).send(book);
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+});
+
+//Route to Get All Books from database
+app.get("/books", async (request, response) => {
+  try {
+    const books = await Book.find({});
+
+    return response.status(200).json({
+      data: books,
+    });
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+});
+
+//Route to Get a Book by id from database
+app.get("/books/:id", async (request, response) => {
+  try {
+    const { id } = request.params;
+
+    const book = await Book.findById(id);
+
+    return response.status(200).json(book);
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+});
+
+//Route for Update a Book
+
+app.put("/books/:id", async (request, response) => {
+  try {
+    if (
+        !request.body.bookTitle ||
+        !request.body.authorName ||
+        !request.body.bookDescription||
+        !request.body.imageURL||
+        !request.body.category||
+        !request.body.bookPDFURL||
+        !request.body.price
+    ) {
+      return response.status(400).send({
+        message: "Send All required fields ",
+      });
+    }
+    const { id } = request.params;
+    const result = await Book.findByIdAndUpdate(id, request.body);
+    if (!result) {
+      return response.status(404).json({ message: "Book not found" });
+    }
+
+    return response.status(200).send({ message: "Book updated successfully" });
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+});
+
+//Route for delete a book
+app.delete("/books/:id", async (request, response) => {
+  try {
+    const { id } = request.params;
+    const result = await Book.findByIdAndDelete(id, request.body);
+    if (!result) {
+      return response.status(404).json({ message: "Book not found" });
+    }
+
+    return response.status(200).send({ message: "Book deleted successfully" });
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+});
+
+
+
 
 
 mongoose.connect(process.env.mongoDBURL).then(() => {
