@@ -6,7 +6,7 @@ const BestSellerBooks = () => {
   const [books, setBooks] = useState<Book[]>([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/books")
+    fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/books`)
       .then((res) => res.json())
       .then((data) => setBooks(data.data.slice(0, 8)));
   }, []);

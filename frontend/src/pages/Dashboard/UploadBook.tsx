@@ -57,7 +57,7 @@ const UploadBook = () => {
       price,
     };
 
-    fetch("http://127.0.0.1:5000/books", {
+    fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/books`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
