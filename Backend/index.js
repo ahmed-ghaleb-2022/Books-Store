@@ -1,10 +1,15 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-import { mongoDBURL } from "./config.js";
 import booksRoute from "./routes/booksRoute.js";
+import env from "dotenv"; 
+
+env.config();
 
 const app = express();
+
+const PORT = 5000
+
 // as middleware
 app.use(cors());
 app.use(express.json());
@@ -16,14 +21,14 @@ app.get("/", (req, res) => {
 app.use('/books', booksRoute)
 
 
-mongoose.connect(mongoDBURL).then(() => {
+mongoose.connect(process.env.mongoDBURL).then(() => {
   console.log("Connected to MongoDB");
 }).catch((err) => {
   console.log(err);
 });
 
-app.listen(3000, () => {
-  console.log("Example app listening on port 3000!");
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
 
 //Y5ayDsg1EJwrRHDf

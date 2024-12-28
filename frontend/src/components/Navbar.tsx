@@ -1,11 +1,22 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaBlog } from "react-icons/fa";
 import { FaBarsStaggered, FaXmark } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../contexts/AuthProvider";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+
+    const authContext = useContext(AuthContext);
+  
+    if (!authContext) {
+      throw new Error("useAuth must be used within an AuthProvider");
+    }
+  
+    const { user } = authContext;
+
+    console.log(user)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -59,10 +70,10 @@ const Navbar = () => {
 
           {/* btn for large screen  */}
           <div className="space-x-12 hidden lg:flex items-center">
-            <button>
+            <Link to="/admin/dashboard">
               {" "}
-              <FaBarsStaggered className="w-5 hover:text-blue-700" />{" "}
-            </button>
+              <span className="w-5 px-4 py-2 text-md text-white rounded bg-blue-700 hover:bg-black transition-all ease-in duration-200" >Dashboard</span>
+            </Link>
           </div>
 
           {/* menu btn for small screen  */}

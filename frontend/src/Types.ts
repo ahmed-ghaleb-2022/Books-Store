@@ -8,5 +8,6 @@ export type Book = {
     imageURL: string;
     category: string;
     bookPDFURL: string;
+    price: number;
 
 }

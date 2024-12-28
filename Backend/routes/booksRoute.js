@@ -12,10 +12,11 @@ router.post("/", async (request, response) => {
       !request.body.bookDescription||
       !request.body.imageURL||
       !request.body.category||
-      !request.body.bookPDFURL
+      !request.body.bookPDFURL||
+      !request.body.price
     ) {
       return response.status(400).send({
-        message: "Send All required fields : title, author, publish Year",
+        message: "Send All required fields ",
       });
     }
     const newBook = {
@@ -25,6 +26,7 @@ router.post("/", async (request, response) => {
       imageURL: request.body.imageURL,
       category: request.body.category,
       bookPDFURL: request.body.bookPDFURL,
+      price: request.body.price
     };
 
     const book = await Book.create(newBook);
@@ -74,10 +76,11 @@ router.put("/:id", async (request, response) => {
         !request.body.bookDescription||
         !request.body.imageURL||
         !request.body.category||
-        !request.body.bookPDFURL
+        !request.body.bookPDFURL||
+        !request.body.price
     ) {
       return response.status(400).send({
-        message: "Send All required fields : title, author, publish Year",
+        message: "Send All required fields ",
       });
     }
     const { id } = request.params;
