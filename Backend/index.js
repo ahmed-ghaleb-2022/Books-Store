@@ -14,7 +14,7 @@ const PORT = 5500
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => {
+app.get("/hallo", (req, res) => {
   res.send("Hello World!");
 });
 
