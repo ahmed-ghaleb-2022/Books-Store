@@ -52,11 +52,11 @@ const DashboardSidebar = () => {
           <Sidebar.Item href="/admin/dashboard/manage" icon={HiInbox}>
             Manage Books
           </Sidebar.Item>
-          <Sidebar.Item href="#" className={disabled} icon={HiUser}>
-            Users
+          <Sidebar.Item href="/" icon={HiUser}>
+           Home Page
           </Sidebar.Item>
           <Sidebar.Item href="#" className={disabled} icon={HiShoppingBag}>
-            Products
+            
           </Sidebar.Item>
           <Sidebar.Item href="/login" icon={HiArrowSmRight}>
             Sign In

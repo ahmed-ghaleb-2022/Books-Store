@@ -8,7 +8,7 @@ const BestSellerBooks = () => {
   useEffect(() => {
     fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/books`)
       .then((res) => res.json())
-      .then((data) => setBooks(data.data.slice(0, 8)));
+      .then((data) => setBooks(data.data.slice(0, 9)));
   }, []);
 
   return (

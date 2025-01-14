@@ -8,7 +8,12 @@ export default {
     flowbite.content(),
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        btn_primary: "#edbf68",
+        btn_hover: "#f5b744",
+      },
+    },
   },
   plugins: [
     flowbite.plugin(),

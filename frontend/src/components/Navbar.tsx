@@ -39,18 +39,17 @@ const Navbar = () => {
   const navItems = [
     { link: "/", name: "Home" },
     { link: "/shop", name: "Shop" },
-    { link: "/about", name: "About" },
-    { link: "/blog", name: "Blog" },
-    { link: "/admin/dashboard", name: "Sell Your Book" },
+    { link: "#", name: "About" },
+    { link: "#", name: "Blog" },
   ];
   return (
-    <header className="w-full z-50 bg-transparent fixed top-0 left-0 right-0 transition-all duration-300 ease-in ">
-      <nav className={`py-4 lg:px-24 px-4 ${isSticky ? "sticky top-0 left-0 right-0 bg-blue-300" : ""} `}>
+    <header className="w-full z-50 md:bg-transparent bg-sky-500 fixed top-0 left-0 right-0 transition-all duration-300 ease-in ">
+      <nav className={`py-4 lg:px-24 px-4 ${isSticky ? "sticky top-0 left-0 right-0 bg-sky-600" : ""} `}>
         <div className="flex items-center justify-between text-base gap-8">
           {/* logo here */}
           <Link
             to="/"
-            className="text-2xl font-bold text-blue-700 flex items-center gap-2"
+            className="text-2xl font-bold text-yellow-300 flex items-center gap-2"
           >
             <FaBlog className="inline-block" /> Book Store
           </Link>
@@ -61,7 +60,7 @@ const Navbar = () => {
               <Link
                 key={link}
                 to={link}
-                className="block text-base text-black cursor-pointer uppercase hover:text-blue-700"
+                className="block text-lg font-semibold text-yellow-300 cursor-pointer uppercase hover:text-[#f5b744]"
               >
                 {name}
               </Link>
@@ -72,7 +71,7 @@ const Navbar = () => {
           <div className="space-x-12 hidden lg:flex items-center">
             <Link to="/admin/dashboard">
               {" "}
-              <span className="w-5 px-4 py-2 text-md text-white rounded bg-blue-700 hover:bg-black transition-all ease-in duration-200" >Dashboard</span>
+              <span className="w-5 px-4 py-2 text-md font-semibold text-black rounded bg-yellow-300 hover:bg-btn_primary transition-all ease-in duration-200" >Dashboard</span>
             </Link>
           </div>
 
@@ -92,18 +91,19 @@ const Navbar = () => {
         </div>
 
         {/* navItem for small screen  */}
-        <div className={`space-y-4 px-4 mt-16 py-7 bg-blue-700 ${isMenuOpen ? "block fixed top-0 right-0 left-0" : "hidden"}`}>
+        <div className={`space-y-2 px-4 mt-16 py-7 md:hidden  ${isSticky ? "bg-sky-600" : "bg-sky-500"}  ${isMenuOpen ? "block fixed top-0 right-0 left-0" : "hidden"}`}>
           {isMenuOpen && (
-            <ul className="flex flex-col space-y-4">
+            <ul className="flex flex-col space-y-1">
               {navItems.map(({ link, name }) => (
                 <Link
                   key={link}
                   to={link}
-                  className="block text-base text-white cursor-pointer uppercase"
+                  className="block text-base text-white hover:bg-sky-700 p-4 cursor-pointer uppercase"
                 >
                   {name}
                 </Link>
               ))}
+              <Link to={"/admin/dashboard"} className="block text-base text-white hover:bg-sky-700 p-4 cursor-pointer uppercase">Dashboard</Link>
             </ul>
           )}
         </div>
