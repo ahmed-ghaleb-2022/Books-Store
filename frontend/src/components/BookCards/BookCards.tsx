@@ -1,4 +1,3 @@
-
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -25,7 +24,7 @@ type BookCardProps = {
 const BookCards = ({ books, headline }: BookCardProps) => {
   return (
     <div className="my-16 px-4 lg:px-24">
-      <h2 className="text-5xl text-center font-bold text-black my-5">
+      <h2 className="text-5xl text-center font-bold text-[#1c883c] my-5">
         {headline}
       </h2>
 
@@ -56,19 +55,25 @@ const BookCards = ({ books, headline }: BookCardProps) => {
         >
           {books.map((book) => (
             <SwiperSlide key={book._id}>
-              <Link to={`/book/${book._id}`}>
+              <Link to={`/book/${book._id}`} className="mb-12 h-[432px] flex flex-col justify-between items-center">
                 <div className="relative">
-                  <img src={book.imageURL} className="!w-92 !h-92" alt="" />
+                  <div className="w-60 h-80 mx-auto">
+                    <img
+                      src={book.imageURL}
+                      alt=""
+                      className="w-full border-2 border-gray-300"
+                    />
+                  </div>
                   <div className="absolute top-3 right-3 bg-[#1A8439] hover:bg-[#1a522a] p-2 rounded">
-                    <FaCartShopping  className="w-4 h-4 text-white"/>
+                    <FaCartShopping className="w-4 h-4 text-white" />
                   </div>
                 </div>
-                <div>
-                  <h3>{book.bookTitle}</h3>
-                  <p>{book.authorName}</p>
+                <div className="flex flex-col items-center justify-between flex-grow">
+                  <h3 className="text-xl font-bold">{book.bookTitle}</h3>
+                  <p className="text-lg text-green-700 font-semibold">{book.authorName}</p>
                 </div>
                 <div>
-                  <p>${book.price}</p>
+                  <p className="text-lg font-bold">${book.price}</p>
                 </div>
               </Link>
             </SwiperSlide>
