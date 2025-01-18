@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Card } from "flowbite-react";
 import { Book } from "../Types";
 import Navbar from "../components/Navbar";
 import ShopBookCard from "../components/ShopBookCard/ShopBookCard";
