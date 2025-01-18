@@ -15,22 +15,27 @@
 }
 
 .banner .swiper-slide:nth-child(1n) {
-  background-image: url('../../assets/books_cover/book1.png');
+  background-image: url('../../assets/books_cover/banner-img1.jpg');
+  background-size: cover;
 }
 
 .banner .swiper-slide:nth-child(2n) {
-  background-image: url('../../assets/books_cover/book2.png');
+  background-image: url('../../assets/books_cover/banner-img2.jpg');
+  background-size: cover;
 }
 
 .banner .swiper-slide:nth-child(3n) {
-  background-image: url('../../assets/books_cover/book3.png');
+  background-image: url('../../assets/books_cover/banner-img3.jpg');
+  background-size: cover;
 }
 
 .banner .swiper-slide:nth-child(4n) {
-  background-image: url('../../assets/books_cover/book4.png');
+  background-image: url('../../assets/books_cover/banner-img4.jpg');
+  background-size: cover;
 }
 
 .banner .swiper-slide:nth-child(5n) {
-  background-image: url('../../assets/books_cover/book5.png');
+  background-image: url('../../assets/books_cover/banner-img5.jpg');
+  background-size: cover;
 }
 

@@ -4,7 +4,7 @@ import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-
 const MyFooter = () => {
   return (
     <Footer bgDark>
-    <div className="w-full bg-sky-800 !text-white">
+    <div className="w-full bg-[#1A8439] !text-white">
       <div className="grid w-full grid-cols-2 gap-8 px-6 py-8 md:grid-cols-4">
         <div>
           <Footer.Title className="text-white" title="Company" />
@@ -42,8 +42,8 @@ const MyFooter = () => {
           </Footer.LinkGroup>
         </div>
       </div>
-      <div className="w-full bg-sky-800  px-4 py-6 sm:flex sm:items-center sm:justify-between">
-        <Footer.Copyright href="#" by="Flowbite™" year={2024} />
+      <div className="w-full bg-[#0f4c21]  px-4 py-6 sm:flex sm:items-center sm:justify-between">
+        <Footer.Copyright href="#" by="Ahmed Ghaleb" year={2025} />
         <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
           <Footer.Icon className="text-white" href="#" icon={BsFacebook} />
           <Footer.Icon className="text-white" href="#" icon={BsInstagram} />

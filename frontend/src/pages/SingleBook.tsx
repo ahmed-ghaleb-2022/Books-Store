@@ -16,11 +16,11 @@ const SingleBook = () => {
     })
 
   return (
-    <div className="md:px-4 md:py-40 py-20 lg:px-24 bg-sky-500">
+    <div className="md:px-4 md:py-40 py-20 lg:px-24 bg-[#1A8439]">
       <Navbar />
     <div className="flex flex-col md:flex-row items-center justify-between">
-      <div className="w-1/2">
-        <img src={book?.imageURL} alt="" className="mx-auto w-48 md:w-auto" />
+      <div className="w-1/2 ">
+        <img src={book?.imageURL} alt="" className="mx-auto w-48 md:w-auto shadow-md shadow-green-400 border-2 border-green-400" />
       </div>
       <div className=" md:w-1/2 p-4 ">
         <h1 className="font-serif text-4xl text-white">{book?.bookTitle} (Paperback)</h1>
@@ -32,7 +32,7 @@ const SingleBook = () => {
                 <p>Paperback  </p>
                 <p> {'110'} Pages / Published: 01/09/2014 </p>
               </div>
-              <p className="text-2xl font-bold text-end text-sky-600">$ {book?.price}</p>
+              <p className="text-2xl font-bold text-end text-yellow-800">$ {book?.price}</p>
           </div>
           <div className="p-5 mt-5 flex justify-between items-center border-t-2 border-gray-300">
                 <div className="">

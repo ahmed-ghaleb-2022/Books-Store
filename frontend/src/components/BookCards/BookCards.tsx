@@ -57,9 +57,9 @@ const BookCards = ({ books, headline }: BookCardProps) => {
           {books.map((book) => (
             <SwiperSlide key={book._id}>
               <Link to={`/book/${book._id}`}>
-                <div className="relative bg-red-500">
+                <div className="relative">
                   <img src={book.imageURL} className="!w-92 !h-92" alt="" />
-                  <div className="absolute top-3 right-3 bg-sky-400 hover:bg-sky-600 p-2 rounded">
+                  <div className="absolute top-3 right-3 bg-[#1A8439] hover:bg-[#1a522a] p-2 rounded">
                     <FaCartShopping  className="w-4 h-4 text-white"/>
                   </div>
                 </div>

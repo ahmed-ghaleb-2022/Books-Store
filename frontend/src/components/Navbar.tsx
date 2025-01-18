@@ -43,8 +43,8 @@ const Navbar = () => {
     { link: "#", name: "Blog" },
   ];
   return (
-    <header className="w-full z-50 md:bg-transparent bg-sky-500 fixed top-0 left-0 right-0 transition-all duration-300 ease-in ">
-      <nav className={`py-4 lg:px-24 px-4 ${isSticky ? "sticky top-0 left-0 right-0 bg-sky-600" : ""} `}>
+    <header className="w-full z-50 md:bg-transparent bg-[#1F9B4A] fixed top-0 left-0 right-0 transition-all duration-300 ease-in ">
+      <nav className={`py-4 lg:px-24 px-4 ${isSticky ? "sticky top-0 left-0 right-0 bg-[#1F9B4A]" : ""} `}>
         <div className="flex items-center justify-between text-base gap-8">
           {/* logo here */}
           <Link

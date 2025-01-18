@@ -10,7 +10,7 @@ const FavBooks = () => {
 
       <div className="md:w-1/2 space-y-6">
         <h2 className="text-5xl font-bold my-5 md:w-3/4 leading-snug">
-          Find Your Favorite <span className="text-blue-700">Book Here!</span>
+          Find Your Favorite <span className="text-[#1A8439]">Book Here!</span>
         </h2>
         <p className="mb-10 text-lg md:w-5/6">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
@@ -33,7 +33,7 @@ const FavBooks = () => {
           </div>
         </div>
 
-        <Link to="/shop" className="mt-12 block"><button className="bg-blue-700 text-white font-semibold px-5 py-2 rounded hover:bg-black transition-all ease-in duration-300">Explore More</button></Link>
+        <Link to="/shop" className="mt-12 block"><button className="bg-[#1A8439] text-white font-semibold px-5 py-2 rounded hover:bg-[#0c2e16] transition-all ease-in duration-300">Explore More</button></Link>
       </div>
     </div>
   );
