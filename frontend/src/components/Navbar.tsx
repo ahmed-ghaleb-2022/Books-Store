@@ -56,9 +56,9 @@ const Navbar = () => {
 
           {/* navItem for large screen  */}
           <ul className="hidden md:flex space-x-12">
-            {navItems.map(({ link, name }) => (
+            {navItems.map(({ link, name }, index) => (
               <Link
-                key={link}
+                key={index}
                 to={link}
                 className="block text-lg font-semibold text-yellow-300 cursor-pointer uppercase hover:text-[#f5b744]"
               >
@@ -94,9 +94,9 @@ const Navbar = () => {
         <div className={`space-y-2 px-4 mt-16 py-7 md:hidden  ${isSticky ? "bg-sky-600" : "bg-sky-500"}  ${isMenuOpen ? "block fixed top-0 right-0 left-0" : "hidden"}`}>
           {isMenuOpen && (
             <ul className="flex flex-col space-y-1">
-              {navItems.map(({ link, name }) => (
+              {navItems.map(({ link, name }, index) => (
                 <Link
-                  key={link}
+                  key={index}
                   to={link}
                   className="block text-base text-white hover:bg-sky-700 p-4 cursor-pointer uppercase"
                 >

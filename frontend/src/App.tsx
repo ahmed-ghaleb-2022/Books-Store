@@ -4,7 +4,6 @@ import Shop from "./pages/Shop";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import SingleBook from "./pages/SingleBook";
-import MyFooter from "./components/MyFooter/MyFooter";
 import DashboardLayout from "./pages/Dashboard/DashboardLayout";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import UploadBook from "./pages/Dashboard/UploadBook";
@@ -38,7 +37,7 @@ const App = () => {
         </Routes>
       </div>
 
-      <MyFooter />
+      {/* <MyFooter /> */}
     </>
   );
 };

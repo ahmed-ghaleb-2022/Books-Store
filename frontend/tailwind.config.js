@@ -13,6 +13,9 @@ export default {
         btn_primary: "#edbf68",
         btn_hover: "#f5b744",
       },
+      screens: {
+        'min-[1600px]': '1600px', // Define the breakpoint
+      },
     },
   },
   plugins: [
