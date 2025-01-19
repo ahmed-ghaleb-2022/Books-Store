@@ -58,10 +58,10 @@ app.post("/books", async (request, response) => {
 app.get("/books", async (request, response) => {
   try {
 
-    // const {category} = request.query;
-    // const filter = category ? { category } : {};
+    const {category} = request.query;
+    const filter = category ? { category } : {};
 
-    const books = await Book.find({});
+    const books = await Book.find({category: filter});
 
     return response.status(200).json({
       data: books,
