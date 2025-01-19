@@ -49,7 +49,13 @@ const Navbar = () => {
 
   /* Cart  */
 
-  const { isCartOpen } = useContext(CartContext);
+  const cartContext = useContext(CartContext);
+
+  if (!cartContext) {
+    throw new Error("CartContext is not available");
+  }
+
+  const { isCartOpen } = cartContext;
 
 
   return (
