@@ -12,5 +12,10 @@
   ],
   "routes": [
     { "src": "/(.*)", "dest": "/" }
-  ]
+  ],
+  "functions": {
+    "api/**/*": {
+      "maxDuration": 300
+    }
+  }
 }
