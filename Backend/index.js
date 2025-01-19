@@ -57,7 +57,9 @@ app.post("/books", async (request, response) => {
 //Route to Get All Books from database
 app.get("/books", async (request, response) => {
   try {
-    const books = await Book.find({});
+    const {category} = request.query;
+    const filter = category ? { category } : {};
+    const books = await Book.find(filter);
 
     return response.status(200).json({
       data: books,
