@@ -50,9 +50,7 @@ const Shop = () => {
           {books.map((book) => (
             <ShopBookCard
               key={book._id}
-              imgSrc={book.imageURL}
-              title={book.bookTitle}
-              description="Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order."
+              book={book}
             />
           ))}
         </div>

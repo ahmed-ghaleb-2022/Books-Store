@@ -12,7 +12,7 @@ const CartIcon = () => {
     throw new Error("CartContext is not available");
   }
 
-  const { isCartOpen, setIsCartOpen } = cartContext;
+  const { isCartOpen, setIsCartOpen, cartCounter } = cartContext;
 
 
 
@@ -24,7 +24,7 @@ const CartIcon = () => {
   return (
     <div className="relative" onClick={toggleCart}>
         <FaCartShopping className="text-5xl text-yellow-300" />
-        <span className="absolute top-0 right-2 bg-red-500 text-base text-white w-6 h-6 flex items-center justify-center rounded-full ">5</span>
+        <span className="absolute top-0 right-2 bg-red-500 text-base text-white w-6 h-6 flex items-center justify-center rounded-full ">{cartCounter}</span>
     </div>
   )
 }

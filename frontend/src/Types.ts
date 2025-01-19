@@ -11,3 +11,7 @@ export type Book = {
     price: number;
 
 }
+
+export type CartBooks = {
+    quantity: number;
+} & Book;

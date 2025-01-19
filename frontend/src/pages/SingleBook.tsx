@@ -1,8 +1,9 @@
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Book } from "../Types";
 import Navbar from "../components/Navbar";
+import { CartContext } from "../contexts/CartContext";
 
 const SingleBook = () => {
   
@@ -14,6 +15,20 @@ const SingleBook = () => {
         .then((res) => res.json())
         .then((data) => setBook(data));
     })
+
+
+    const cartContext = useContext(CartContext);
+    
+      if (!cartContext) {
+        throw new Error("CartContext is not available");
+      }
+    
+      const { addBookToCart } = cartContext;
+    
+      const handleAddToCart = () => {
+        if (!book) return;
+        addBookToCart(book);
+      };
 
   return (
     <div className="md:px-4 md:py-40 py-20 lg:px-24 bg-[#1A8439]">
@@ -40,7 +55,9 @@ const SingleBook = () => {
                     <input className="w-20 ml-3" type="number" placeholder="1" min={1} />
                 </div>
                 <div className="">
-                  <button className="text-gray-800 text-md font-medium rounded bg-yellow-300 border-none outline-none py-2 px-4 text-xl  transition-all ease-in duration-300 hover:opacity-70">Add to Basket</button>
+                  <button 
+                  onClick={handleAddToCart}
+                  className="text-gray-800 text-md font-medium rounded bg-yellow-300 border-none outline-none py-2 px-4 text-xl  transition-all ease-in duration-300 hover:opacity-70">Add to Basket</button>
                 </div>
                             
               </div>
