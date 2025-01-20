@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-import { FaBlog } from "react-icons/fa";
 import { FaBarsStaggered, FaXmark } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthProvider";
