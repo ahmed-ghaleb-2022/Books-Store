@@ -6,6 +6,7 @@ import { AuthContext } from "../contexts/AuthProvider";
 import CartIcon from "./CartIcon/CartIcon";
 import CartDropdawn from "./CartDropdawn/CartDropdawn";
 import { CartContext } from "../contexts/CartContext";
+import LogoImg from "../assets/books.png"
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -71,7 +72,8 @@ const Navbar = () => {
             to="/"
             className="text-2xl font-bold text-yellow-300 flex items-center gap-2"
           >
-            <FaBlog className="inline-block" /> Book Store
+            <img src={LogoImg} alt="logo" className="w-10 h-10 inline-block" />
+             Book Store
           </Link>
 
           {/* navItem for large screen  */}

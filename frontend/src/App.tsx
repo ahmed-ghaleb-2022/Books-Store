@@ -4,6 +4,7 @@ import Shop from "./pages/Shop";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import SingleBook from "./pages/SingleBook";
+import Checkout from "./pages/Checkout";
 import DashboardLayout from "./pages/Dashboard/DashboardLayout";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import UploadBook from "./pages/Dashboard/UploadBook";
@@ -14,6 +15,7 @@ import Login from "./components/Login/Login";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Logout from "./components/Logout/Logout";
 
+
 const App = () => {
   return (
     <>
@@ -22,6 +24,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/book/:id" element={<SingleBook />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/admin/dashboard" element={<DashboardLayout />}>
             <Route index element={<PrivateRoute> <Dashboard /></PrivateRoute>} />

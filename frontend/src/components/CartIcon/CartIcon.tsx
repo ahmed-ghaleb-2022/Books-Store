@@ -22,8 +22,8 @@ const CartIcon = () => {
 
 
   return (
-    <div className="relative" onClick={toggleCart}>
-        <FaCartShopping className="text-5xl text-yellow-300" />
+    <div className="relative cursor-pointer " onClick={toggleCart}>
+        <FaCartShopping className="text-5xl text-yellow-300 hover:text-yellow-300/80 transition-colors ease-in duration-200" />
         <span className="absolute top-0 right-2 bg-red-500 text-base text-white w-6 h-6 flex items-center justify-center rounded-full ">{cartCounter}</span>
     </div>
   )
