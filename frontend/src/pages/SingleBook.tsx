@@ -38,26 +38,28 @@ const SingleBook = () => {
         <img src={book?.imageURL} alt="" className="mx-auto w-48 md:w-auto shadow-md shadow-green-400 border-2 border-green-400" />
       </div>
       <div className=" md:w-1/2 p-4 ">
-        <h1 className="font-serif text-4xl text-white">{book?.bookTitle} (Paperback)</h1>
+        <h1 className="font-serif text-4xl text-white mb-3">{book?.bookTitle} (Paperback)</h1>
         <h3 className="text-2xl font-semibold text-yellow-300 font-sans"> {book?.authorName} (author)</h3>
         {/* to add in baskets  */}
         <div className="w-full bg-white border-2 border-gray-300 mt-12">
           <div className="p-5 mt-5 flex justify-between items-center">
               <div>
                 <p>Paperback  </p>
-                <p> {'110'} Pages / Published: 01/09/2014 </p>
+                <p> {'***'} Pages / Published: **/**/**** </p>
               </div>
-              <p className="text-2xl font-bold text-end text-yellow-800">$ {book?.price}</p>
+              <p className="text-2xl font-bold text-end text-black">$ {book?.price}</p>
           </div>
           <div className="p-5 mt-5 flex justify-between items-center border-t-2 border-gray-300">
-                <div className="">
-                      <label htmlFor="Quantity">Quantity</label>
-                    <input className="w-20 ml-3" type="number" placeholder="1" min={1} />
+                <div className="w-3/4 h-80 overflow-y-scroll">
+                <h3 className="text-3xl font-semibold">Description</h3>
+                  <p className="text-lg p-4 font-medium">{book?.bookDescription}</p>
+                    {/* <label htmlFor="Quantity">Quantity</label>
+                    <input className="w-20 ml-3" type="number" placeholder="1" min={1} /> */}
                 </div>
                 <div className="">
                   <button 
                   onClick={handleAddToCart}
-                  className="text-gray-800 text-md font-medium rounded bg-yellow-300 border-none outline-none py-2 px-4 text-xl  transition-all ease-in duration-300 hover:opacity-70">Add to Basket</button>
+                  className="text-gray-800 text-md font-medium rounded bg-yellow-300 border-none outline-none py-2 px-4 text-xl transition-all ease-in duration-300 hover:opacity-70">Add to Basket</button>
                 </div>
                             
               </div>

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
 import { Book } from "../../Types";
 import { FaCartShopping } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const ShopBookCard = ({ book }: { book: Book }) => {
   const { bookTitle, bookDescription, imageURL } = book;
@@ -13,12 +14,14 @@ const ShopBookCard = ({ book }: { book: Book }) => {
 
   const { addBookToCart } = cartContext;
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
     addBookToCart(book);
   };
 
   return (
-    <div className="bg-white rounded-md shadow-md shadow-yellow-200 p-3 flex flex-col justify-between items-center ">
+    <Link to={`/book/${book._id}`}>
+    <div className="bg-white rounded-md shadow-md shadow-yellow-200 p-3 flex flex-col justify-between items-center h-[600px] ">
       <div className="w-60 h-80 mx-auto">
         <img
           src={imageURL}
@@ -39,6 +42,7 @@ const ShopBookCard = ({ book }: { book: Book }) => {
         Buy Now <FaCartShopping className="w-4 h-4" />
       </button>
     </div>
+    </Link>
   );
 };
 

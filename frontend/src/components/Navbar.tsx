@@ -118,7 +118,7 @@ const Navbar = () => {
         {/* navItem for small screen  */}
         <div
           className={`space-y-2 px-4 mt-16 py-7 md:hidden  ${
-            isSticky ? "bg-sky-600" : "bg-sky-500"
+            isSticky ? "bg-[#1F9B4A]" : "bg-[#1F9B4A]"
           }  ${isMenuOpen ? "block fixed top-0 right-0 left-0" : "hidden"}`}
         >
           {isMenuOpen && (
@@ -127,14 +127,14 @@ const Navbar = () => {
                 <Link
                   key={index}
                   to={link}
-                  className="block text-base text-white hover:bg-sky-700 p-4 cursor-pointer uppercase"
+                  className="block text-base text-white hover:bg-[#20773e] p-4 cursor-pointer uppercase"
                 >
                   {name}
                 </Link>
               ))}
               <Link
                 to={"/admin/dashboard"}
-                className="block text-base text-white hover:bg-sky-700 p-4 cursor-pointer uppercase"
+                className="block text-base text-white hover:bg-[#20773e] p-4 cursor-pointer uppercase"
               >
                 Dashboard
               </Link>

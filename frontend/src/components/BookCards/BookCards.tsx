@@ -17,10 +17,11 @@ import { CartContext } from "../../contexts/CartContext";
 
 type BookCardProps = {
   books: Book[];
+  isloading: boolean;
   headline: string;
 };
 
-const BookCards = ({ books, headline }: BookCardProps) => {
+const BookCards = ({ books, isloading, headline }: BookCardProps) => {
   const cartContext = useContext(CartContext);
 
   if (!cartContext) {
@@ -32,6 +33,11 @@ const BookCards = ({ books, headline }: BookCardProps) => {
   const handleAddToCart = (book: Book) => {
     addBookToCart(book);
   };
+
+  if (isloading) {
+    return <div>Loading...</div>;
+  }
+
 
   return (
     <div className="my-16 px-4 lg:px-24">

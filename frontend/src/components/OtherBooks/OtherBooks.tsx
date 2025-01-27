@@ -1,20 +1,15 @@
-import { useEffect, useState } from "react";
-import { Book } from "../../Types";
+
+
 import BookCards from "../BookCards/BookCards";
+import { useBookContext } from "../../contexts/useBookContext";
 
 
 const OtherBooks = () => {
-    const [books, setBooks] = useState<Book[]>([]);
-
-    useEffect(() => {
-      fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/books`)
-        .then((res) => res.json())
-        .then((data) => setBooks(data.data.slice(4, 8)));
-    }, []);
+  const { books, loading } = useBookContext();
   
     return (
       <div>
-        <BookCards books={books} headline="Other Books" />
+        <BookCards books={books.slice(6, 15)} isloading={loading} headline="Other Books" />
       </div>
     );
 }
