@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { FaBarsStaggered, FaXmark } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../contexts/AuthProvider";
 import CartIcon from "./CartIcon/CartIcon";
 import CartDropdawn from "./CartDropdawn/CartDropdawn";
 import { CartContext } from "../contexts/CartContext";
@@ -10,16 +9,6 @@ import LogoImg from "../assets/books.png"
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
-
-  const authContext = useContext(AuthContext);
-
-  if (!authContext) {
-    throw new Error("useAuth must be used within an AuthProvider");
-  }
-
-  const { user } = authContext;
-
-  console.log(user);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
